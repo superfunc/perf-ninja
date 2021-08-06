@@ -10,10 +10,10 @@ void init(std::array<S, N> &arr) {
     int random_int1 = distribution(generator);
     int random_int2 = distribution(generator);
 
-    arr[i].i = random_int1;
-    arr[i].s = static_cast<short>(random_int2);
-    arr[i].l = static_cast<long long>(random_int1) * random_int2;
-    arr[i].d = static_cast<double>(random_int1) / maxRandom;
+    arr[i].i = static_cast<char>(random_int1); // could be a char due to 0 <= maxRandom < 100
+    arr[i].s = static_cast<char>(random_int2); // could be a char due to 0 <= maxRandom < 100
+    arr[i].l = static_cast<short>(random_int1) * random_int2; // multiply of two char shoudl fit in a short
+    arr[i].d = static_cast<float >(random_int1) / maxRandom; // double to float, loosing precision is acceptable? ;)
     arr[i].b = random_int1 < random_int2;
   }
 }
