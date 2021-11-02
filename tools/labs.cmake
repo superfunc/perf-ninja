@@ -20,7 +20,7 @@ endif()
 if(NOT MSVC)
   set(CMAKE_C_FLAGS "-O3 -ffast-math -march=native ${CMAKE_C_FLAGS}")
 else()
-  set(CMAKE_C_FLAGS "/O2 /fp:fast /arch:AVX2 ${CMAKE_C_FLAGS}")
+  set(CMAKE_C_FLAGS "/O2 /fp:fast ${CMAKE_C_FLAGS}")
 endif()
 
 # Set Windows stack size as on Linux: 2MB on 32-bit, 8MB on 64-bit
